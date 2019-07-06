@@ -9,19 +9,6 @@ var client = new Twitter({
   access_token_secret: '1FGueCn1Q9Nz8Bv6gOe2QftPzX9Fp1RzjBn37uzagSWEw'
 });
 
-// router.get('/twitter', function(req, res, next) {
-//   // https://dev.twitter.com/rest/reference/get/statuses/user_timeline
-//   client.get('statuses/user_timeline', { screen_name: 'jerald george', count: 2 }, function(error, tweets, response) {
-//     if (!error) {
-//       res.status(200).render('index', { title: 'Express', tweets: tweets });
-//     }
-//     else {
-//       res.status(500).json({ error: error });
-//     }
-//   });
-// });
-
-// var params = {screen_name: 'nodejs'};
 router.get('/twitter', function(req, res, next) {
 var params = {screen_name: 'jerald george', count: 1};
 client.get('statuses/user_timeline', params, function(error, tweets, response) {
